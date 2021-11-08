@@ -1,7 +1,9 @@
 import java.util.Arrays;
+
 Fish fish;
 Liquid liquid;
 ArrayList<Food> foods;
+
 void setup() {
   size(640,320);
   background(255);
@@ -9,10 +11,14 @@ void setup() {
   foods = new ArrayList<Food>();
   liquid = new Liquid(0, height*1/5, width, height*4/5, 0.1);
 }
+
+
 void mousePressed() {
   Food f = new Food(random(width),random(height),0.8);
   foods.add(f);
 }
+
+
 void draw() {
   PVector mouseLocation = new PVector(mouseX, mouseY);
   fish.attract(mouseLocation);
